@@ -1,0 +1,352 @@
+
+<meta charset="utf-g">
+<meta name="stylesheet" content="width=device=width, initial=scale=1">
+
+<div class="main">
+
+<div class="date" >
+    <p>Generated On :- 4-Feb-2013 || 13.38 IST</p>
+</div>
+
+<div class="logo">
+    <img src="https://plexushr.com/wp-content/uploads/2022/10/plexus_logo_dark_C.png" alt="PlexusHr_Logo">
+</div>
+<div class="header">
+    <h1>HIRING REPORT</h1>
+</div>
+
+
+
+<table class="rwd-table" *ngFor="let user of users">
+    <tr>
+      <th class>No. Of Active Position</th>
+      <th>No. Of Resumes Supplied</th>
+    </tr>
+    <tr > 
+      <td>{{user.activePositionsCount}}</td>
+      <!-- <td>{{user.}}</td> -->
+    <div>    
+      <tr *ngFor="let res of user.totalResumesSupplied">
+        <td> {{res.count}}</td>
+        </tr>
+    </div>
+    </tr> 
+  </table>
+
+<!-- <div class="heading">
+<h5>Overall Candidate Status</h5>
+</div>
+
+<div>
+<table class="rwd-table" *ngFor="let user of users">
+    <div>
+    <tr>
+      <th>Recommended</th>
+      <th>Screen Selected</th>
+      <th>In Evaluation</th>
+      <th>Screen Rejected</th>
+      <th>Total</th>
+    </tr>
+    <tr *ngFor="let Cand_Status of user.orgLevelCandidateStatus" >
+      <td>{{Cand_Status.status}}</td>
+      <td>{{Cand_Status.count}}</td>
+      <td>3</td>
+      <td>15</td>
+      <td>112</td>
+    </tr>
+    </div>
+</table>
+</div> -->
+
+
+   <div class="heading">
+    <h5>Overall Candidate Status</h5>
+    </div>
+    
+    <div>
+    <table class="Overall_table" *ngFor="let user of users">
+        <div>
+        <tr *ngFor="let Cand_Status of user.orgLevelCandidateStatus" >
+          <th>{{Cand_Status.status}}</th>
+          <th>{{Cand_Status.count}}</th>
+        </tr>
+        <tr *ngFor="let Cand_Status of user.orgLevelCandidateStatus" >
+          <!-- <td>{{Cand_Status.count}}</td> -->
+        </tr>
+        </div>
+    </table>
+    </div>
+    
+
+
+<div class="heading">
+    <h5>Position Level  Candidate Status</h5>
+</div>
+    
+<div>
+<table class="rwd-table" *ngFor="let user of users">
+    <tr>
+        <th>Id</th>
+        <th>JD Title</th>
+        <th>Recommended</th>
+        <th>Received</th>
+        <th>Screen Selected</th>
+        <th>In Evaluation</th>
+        <th>Screen Rejected</th>
+    </tr>
+     <tr *ngFor="let pos_level of user.positionLevelCandidateStatus">
+        <td>{{pos_level.did}}</td>
+        <td>{{pos_level.jdTitle}}</td>
+         <div *ngFor="let i of pos_level.data">
+            <div *ngIf="pos_level.data">
+                <div *ngIf="i.status=='Recommended'">
+                    <td>{{i.count}}</td>
+                </div>
+                
+            </div>
+        </div>
+     
+        <div *ngFor="let i of pos_level.data">
+            <div *ngIf="pos_level.data">
+                <div *ngIf="i.status=='Screen Selected'">
+                    <td>{{i.count}}</td>
+                </div>
+                
+            </div>
+        </div>
+    
+        <tr *ngFor="let pos_level of user.positionLevelCandidateStatus">
+            <td>{{pos_level.did}}</td>
+            <td>{{pos_level.jdTitle}}</td>
+             <div *ngFor="let i of pos_level.data">
+                <div *ngIf="pos_level.data">
+                    <div *ngIf="i.status=='Screen Selected'">
+                        <td>{{i.count}}</td>
+                    </div>
+                </div>
+            </div> 
+
+    
+        
+        <!-- <td>0</td>
+        <td>6</td>
+        <td>3</td>
+        <td>12</td>
+        <td>11</td> -->
+    </tr>
+</table>
+</div>
+    
+<div class="heading">
+    <h5>Vendor Performance (Overall)</h5>
+</div>
+        
+<div>
+<table class="rwd-table" *ngFor="let user of users">
+    <tr>
+        <th>Vendor</th>
+        <th>Total</th>
+        <th>Recommended</th>
+        <th>Screen Selected</th>
+        <th>In Evaluation</th>
+        <th>Screen Rejected</th>
+    </tr>
+    <tr *ngFor="let ven_per of user.vendorPerformance">
+        <td>{{ven_per.did}}</td>
+        <td>{{ven_per.jdTitle}}</td>
+        <td>34</td>
+        <td>2</td>
+        <td>3</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>InfluxUs Consulting Services Pvt. Ltd. </td>
+        <td>27</td>
+        <td>22</td>
+        <td>2</td>
+        <td>0</td>
+        <td>3</td>
+        </tr>
+            
+</table>
+</div>
+
+<div class="heading">
+    <h5>Vendor Performance (Position: Salesforce [#73]</h5>
+</div>
+            
+<div>
+<table class="rwd-table">
+    <tr>
+        <th>Vendor</th>
+        <th>Total</th>
+        <th>Recommended</th>
+        <th>Screen Selected</th>
+        <th>In Evaluation</th>
+        <th>Screen Rejected</th>
+    </tr>
+    <tr>
+        <td>Hire Bridge Consultancy</td>
+        <td>46</td>
+        <td>34</td>
+        <td>2</td>
+        <td>3</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>InfluxUs Consulting Services Pvt. Ltd. </td>
+        <td>27</td>
+        <td>22</td>
+        <td>2</td>
+        <td>0</td>
+        <td>3</td>
+        </tr>
+                
+</table>
+</div>
+
+<div class="heading">
+    <h5>Vendor Performance (Position: Java Developer [#74])</h5>
+</div>
+                
+<div>
+<table class="rwd-table">
+    <tr>
+        <th>Vendor</th>
+        <th>Total</th>
+        <th>Recommended</th>
+        <th>Screen Selected</th>
+        <th>In Evaluation</th>
+        <th>Screen Rejected</th>
+    </tr>
+    <tr>
+        <td>Hire Bridge Consultancy</td>
+        <td>46</td>
+        <td>34</td>
+        <td>2</td>
+        <td>3</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>InfluxUs Consulting Services Pvt. Ltd. </td>
+        <td>27</td>
+        <td>22</td>
+        <td>2</td>
+        <td>0</td>
+        <td>3</td>
+        </tr>
+                    
+</table>
+</div>
+    
+<div class="heading">
+    <h5>Vendor Performance (Position: Progress 4L [#75])</h5>
+</div>
+                    
+<div>
+<table class="rwd-table">
+    <tr>
+        <th>Vendor</th>
+        <th>Total</th>
+        <th>Recommended</th>
+        <th>Screen Selected</th>
+        <th>In Evaluation</th>
+        <th>Screen Rejected</th>
+    </tr>
+    <tr>
+        <td>Hire Bridge Consultancy</td>
+        <td>46</td>
+        <td>34</td>
+        <td>2</td>
+        <td>3</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>InfluxUs Consulting Services Pvt. Ltd. </td>
+        <td>27</td>
+        <td>22</td>
+        <td>2</td>
+        <td>0</td>
+        <td>3</td>
+        </tr>
+                        
+</table>
+</div>
+
+<div class="heading">
+    <h5>Vendor Performance (Position: Power BI Developer [#79])</h5>
+</div>
+                        
+<div>
+<table class="rwd-table">
+    <tr>
+        <th>Vendor</th>
+        <th>Total</th>
+        <th>Recommended</th>
+        <th>Screen Selected</th>
+        <th>In Evaluation</th>
+        <th>Screen Rejected</th>
+    </tr>
+    <tr>
+        <td>Hire Bridge Consultancy</td>
+        <td>46</td>
+        <td>34</td>
+        <td>2</td>
+        <td>3</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>InfluxUs Consulting Services Pvt. Ltd. </td>
+        <td>27</td>
+        <td>22</td>
+        <td>2</td>
+        <td>0</td>
+        <td>3</td>
+        </tr>
+                            
+</table>
+</div>
+            
+<div class="heading">
+    <h5>Vendor Performance (Position: Dot Net Software Developer [#86])</h5>
+</div>
+            
+<div>
+<table class="rwd-table">
+    <tr>
+        <th>Vendor</th>
+        <th>Total</th>
+        <th>Recommended</th>
+        <th>Screen Selected</th>
+        <th>In Evaluation</th>
+        <th>Screen Rejected</th>
+    </tr>
+    <tr>
+        <td>Hire Bridge Consultancy</td>
+        <td>46</td>
+        <td>34</td>
+        <td>2</td>
+        <td>3</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>InfluxUs Consulting Services Pvt. Ltd. </td>
+        <td>27</td>
+        <td>22</td>
+        <td>2</td>
+        <td>0</td>
+        <td>3</td>
+        </tr>
+                
+</table>
+</div>
+
+<div>
+<h5 class="footer">
+    Unique Marketplace for Resource Suppliers and Seekers
+</h5>
+</div>
+
+
+</div>
+
